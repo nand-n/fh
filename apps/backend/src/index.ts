@@ -34,7 +34,7 @@ const startServer = async () => {
   });
   await server.start();
   server.applyMiddleware({ app });
-  const port = Number(process.env.PORT ?? 8080);
+  const port = process.env.PORT ?? 8080;
   await new Promise<void>((resolve) =>
     httpServer.listen({ host: '0.0.0.0', port }, resolve)
   );
