@@ -63,6 +63,11 @@ services:
         fromDatabase:
           name: fh-prod-db1
           property: connectionString
+      - key: REDIS_URL
+        fromService:
+          name: fh-prod-redis1
+          type: redis
+          property: connectionString
 
   - type: web
     env: static
@@ -86,7 +91,6 @@ services:
 
   - type: redis
     name: fh-prod-redis1
-    free: true # Specify that this service should be on the free tier
     ipAllowList: []
 
 databases:
