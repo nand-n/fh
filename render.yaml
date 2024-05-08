@@ -2,7 +2,7 @@ services:
   - type: web
     env: node
     name: fh-prod-backend1
-    repo: https://github.com/mrwade/form-hub.git
+    repo: https://github.com/nand-n/fh
     buildFilter:
       paths:
         - apps/backend/**
@@ -22,7 +22,7 @@ services:
   - type: web
     env: static
     name: fh-prod-frontend1
-    repo: https://github.com/mrwade/form-hub.git
+    repo: https://github.com/nand-n/fh
     buildFilter:
       paths:
         - apps/frontend/**
