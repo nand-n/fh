@@ -58,6 +58,8 @@ services:
         - apps/backend/**
     buildCommand: yarn && yarn build --filter=backend
     startCommand: cd apps/backend; yarn start
+    plan: free
+
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -73,6 +75,8 @@ services:
     env: static
     name: fh-prod-frontend1
     repo: https://github.com/nand-n/fh
+    plan: free
+
     buildFilter:
       paths:
         - apps/frontend/**
@@ -89,9 +93,12 @@ services:
           type: web
           property: host
 
+
   - type: redis
     name: fh-prod-redis1
     ipAllowList: []
+    plan: free
+
 
 databases:
   - name: fh-prod-db1
