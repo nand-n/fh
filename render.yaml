@@ -95,3 +95,4 @@ services:
 
 databases:
   - name: fh-prod-db1
+    plan: free
